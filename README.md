@@ -15,3 +15,10 @@ Salida de Python
 
 Salida de Java
 ![Java](assets/java.png)
+
+## Practica 3 - 23/oct
+Ordenamiento de numeros
+![Java](assets/odenamientos.png)
+
+Ordenamiento de personas
+![Java](assets/personas.png)

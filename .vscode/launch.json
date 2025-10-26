@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "ICC_est_u1_metodosOrdenamiento",
+            "request": "launch",
+            "mainClass": "org.ordenamiento.app.ICC_est_u1_metodosOrdenamiento",
+            "projectName": "ICC_est_u1_metodosOrdenamiento"
+        },
+        {
             "type": "jdk",
             "request": "launch",
             "name": "Launch Java App"

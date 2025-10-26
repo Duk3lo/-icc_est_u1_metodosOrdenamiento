@@ -5,7 +5,7 @@ public class ICC_est_u1_metodosOrdenamiento {
     public static void main(String[] args) {
         int[] numeros = {10, 0, -5, 5, 12, 2};
 
-        SortBubble sort = new SortBubble();
+        SortBubble claseSortBubble = new SortBubble();
 
         /* printArray(nuemros);
         sortBubble(nuemros);
@@ -13,8 +13,7 @@ public class ICC_est_u1_metodosOrdenamiento {
         printArray(nuemros);  */
         //Creo laclase SortBubble
         //Crear la clase == Instanciar la clase
-        SortBubble claseSortBubble = new SortBubble();
-        claseSortBubble.printArray(numeros);
+        
         //claseSortBubble.sortBubble(nuemros);
         //claseSortBubble.printArray(nuemros);
 
@@ -25,20 +24,23 @@ public class ICC_est_u1_metodosOrdenamiento {
 
         //Asendente
         SortSelection selection = new SortSelection();
-        System.out.println("Asendente: ");
+        System.out.println("Asendente:");
         selection.sortAscendente(numeros);
-        sort.printArray(numeros);
+        claseSortBubble.printArray(numeros);
 
         //Desendente
         System.out.println("Desendente: ");
         selection.sortDescendente(numeros);
-        sort.printArray(numeros);
+        claseSortBubble.printArray(numeros);
 
         Inserction inserction = new Inserction();
-        System.out.println("Arreglo de numeros");
-        int[] arre = new int[]{10, 0, -5, 5, 12, 2};
-        inserction.insertionNumber(arre, true);
 
+        int[] arre = new int[]{10, 0, -5, 5, 12, 2};
+        System.out.println("\nInserction de numeos");
+        inserction.insertionNumber(arre, false);
+        claseSortBubble.printArray(arre);
+
+        System.out.println("");
         Persona[] personas = new Persona[]{
             new Persona("Pedro", 30),
             new Persona("Ana", 25),
