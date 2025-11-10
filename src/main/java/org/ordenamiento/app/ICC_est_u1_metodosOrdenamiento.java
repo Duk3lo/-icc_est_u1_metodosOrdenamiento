@@ -2,61 +2,72 @@ package org.ordenamiento.app;
 
 public class ICC_est_u1_metodosOrdenamiento {
 
+    private static final String STUDENT_NAME = "Pablo Torres";
+
     public static void main(String[] args) {
-        int[] numeros = {10, 0, -5, 5, 12, 2};
+        Inserction insercion = new Inserction();
 
-        SortBubble claseSortBubble = new SortBubble();
+        // --- 1) Arreglo de enteros (tal como pide la práctica) ---
+        int[] numerosOriginal = {10, 0, -5, 5, 15, 2};
 
-        /* printArray(nuemros);
-        sortBubble(nuemros);
-        System.out.println("Ordenado");
-        printArray(nuemros);  */
-        //Creo laclase SortBubble
-        //Crear la clase == Instanciar la clase
-        
-        //claseSortBubble.sortBubble(nuemros);
-        //claseSortBubble.printArray(nuemros);
+        System.out.println("Estudiante: " + STUDENT_NAME);
+        System.out.println("Método Inserción");
+        System.out.println("Original");
+        insercion.printArray(numerosOriginal);
 
-        //claseSortBubble.sortBubbleAvz(numeros);
-        //Original
-        System.out.println("Original: ");
-        claseSortBubble.printArray(numeros);
+        // Ordenado Ascendente
+        int[] copiaAsc = insercion.copyIntArray(numerosOriginal);
+        insercion.insertionNumber(copiaAsc, false); // pasos = false
+        System.out.println("Ordenado Ascendente");
+        insercion.printArray(copiaAsc);
 
-        //Asendente
-        SortSelection selection = new SortSelection();
-        System.out.println("Asendente:");
-        selection.sortAscendente(numeros);
-        claseSortBubble.printArray(numeros);
+        // Ordenado Descendente (hacemos la inversa del ascendente)
+        int[] copiaDesc = insercion.copyIntArray(copiaAsc);
+        insercion.reverseIntArray(copiaDesc);
+        System.out.println("Ordenado Descendente");
+        insercion.printArray(copiaDesc);
 
-        //Desendente
-        System.out.println("Desendente: ");
-        selection.sortDescendente(numeros);
-        claseSortBubble.printArray(numeros);
+        System.out.println("\n----------------------------------------\n");
 
-        Inserction inserction = new Inserction();
+        // --- 2) Arreglo de cadenas ---
+        System.out.println("Estudiante: " + STUDENT_NAME);
+        String[] nombres = {"Pedro", "Ana", "Maria", "Luis", "Juan"};
+        System.out.println("Array de Nombres Original:");
+        insercion.printArrayStrings(nombres);
 
-        int[] arre = new int[]{10, 0, -5, 5, 12, 2};
-        System.out.println("\nInserction de numeos");
-        inserction.insertionNumber(arre, false);
-        claseSortBubble.printArray(arre);
+        String[] nombresCopia = insercion.copyStringArray(nombres);
+        insercion.sortByName(nombresCopia, false); // pasos = false
+        System.out.println("Ordenado por Nombre:");
+        insercion.printArrayStrings(nombresCopia);
 
-        System.out.println("");
+        System.out.println("\n----------------------------------------\n");
+
+        // --- 3) Arreglo de personas ordenado por nombre ---
+        System.out.println("Estudiante: " + STUDENT_NAME);
         Persona[] personas = new Persona[]{
             new Persona("Pedro", 30),
             new Persona("Ana", 25),
             new Persona("Maria", 28)
         };
 
-        System.out.println("Array original:");
-        inserction.printArrayPersonas(personas);
+        System.out.println("Array de Personas Original:");
+        insercion.printPersonasLines(personas);
 
-        inserction.sortByPersonaNombre(personas);
-        System.out.println("\nArray ordenado por nombre:");
-        inserction.printArrayPersonas(personas);
+        Persona[] personasPorNombre = insercion.copyPersonaArray(personas);
+        insercion.sortByPersonaNombre(personasPorNombre);
+        System.out.println("\nOrdenado por Nombres de Personas:");
+        insercion.printPersonasLines(personasPorNombre);
 
-        inserction.sortByPersonaEdad(personas);
-        System.out.println("\nArray ordenado por edad:");
-        inserction.printArrayPersonas(personas);
+        System.out.println("\n----------------------------------------\n");
 
+        // --- 4) Arreglo de personas ordenado por edad ---
+        System.out.println("Estudiante: " + STUDENT_NAME);
+        System.out.println("Array de Personas Original:");
+        insercion.printPersonasLines(personas);
+
+        Persona[] personasPorEdad = insercion.copyPersonaArray(personas);
+        insercion.sortByPersonaEdad(personasPorEdad);
+        System.out.println("\nOrdenado por EDAD de Personas:");
+        insercion.printPersonasLines(personasPorEdad);
     }
 }
